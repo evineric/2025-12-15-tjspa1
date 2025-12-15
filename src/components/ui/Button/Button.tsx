@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import style from './Button.module.css';
 interface IButtonProps{
   children:string|React.ReactElement|Array<string|React.ReactElement>;
@@ -7,7 +7,7 @@ interface IButtonProps{
   type?:'button'|'submit'|'reset';
 }
 const Button = ({ children, onButtonClick, bgColor = "black", type = "button" }:IButtonProps) => {
-  console.log(children);
+  const [isCliked, setIsClicked] = useState(false);
   return (
     <button
       type={type}
@@ -15,14 +15,16 @@ const Button = ({ children, onButtonClick, bgColor = "black", type = "button" }:
       style={{backgroundColor:bgColor}}
       onClick={() => {
         if(onButtonClick != undefined){
+          console.log(children);
           onButtonClick();
+          setIsClicked(true);          
         }
         else{
           console.log("j'ai cliqué sur un bouton");
         }
       }}
     >
-      {children}
+      {children} <br/> {isCliked.toString()}
     </button>
   );
 };

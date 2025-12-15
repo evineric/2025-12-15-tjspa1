@@ -1,31 +1,33 @@
+import { useEffect, useState } from "react";
 import Button from "../components/ui/Button/Button";
 
-function App() {
+const App: React.FC<undefined> = () => {
+  const [counter, setCounter] = useState(0);
+  useEffect(() => {
+    console.log('counter effect',counter);
+  }, [counter]);
+
   return (
-    <div>
-      DEMAT BREIZH
-      <br />
+    <div style={{ textAlign: "center" }}>
+      valeur de counter :{counter}
+      <hr />
       <Button
         onButtonClick={() => {
-          console.log("j'ai cliqué sur Benjamin");
+          setCounter(counter - 1);
         }}
-        bgColor="tomato"
       >
-        benjamin
+        -1
       </Button>
       <Button
+        bgColor="skyblue"
         onButtonClick={() => {
-          console.log("j'ai cliqué sur Cancel");
+          setCounter(counter + 1);
         }}
       >
-        <div className="Warning"> Cancel </div>
-      </Button>
-      <Button bgColor="#ccff00">
-        <div>3ème </div>
-        <div>Bouton</div>
+        +1
       </Button>
     </div>
   );
-}
+};
 
 export default App;
