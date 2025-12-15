@@ -6,16 +6,16 @@ function App() {
       DEMAT BREIZH
       <br />
       <Button
-        onButtonClick={(param) => {
-          console.log("j'ai cliqué sur ", param);
+        onButtonClick={() => {
+          console.log("j'ai cliqué sur Benjamin");
         }}
         bgColor="tomato"
       >
         benjamin
       </Button>
       <Button
-        onButtonClick={(param) => {
-          console.log("j'ai cliqué sur ", param);
+        onButtonClick={() => {
+          console.log("j'ai cliqué sur Cancel");
         }}
       >
         <div className="Warning"> Cancel </div>

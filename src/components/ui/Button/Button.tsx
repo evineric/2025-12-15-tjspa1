@@ -1,16 +1,23 @@
 import React from "react";
 import style from './Button.module.css';
-const Button = ({ children, onButtonClick, bgColor = "black" }) => {
+interface IButtonProps{
+  children:string|React.ReactElement|Array<string|React.ReactElement>;
+  onButtonClick?:()=>void;
+  bgColor?:string;
+  type?:'button'|'submit'|'reset';
+}
+const Button = ({ children, onButtonClick, bgColor = "black", type = "button" }:IButtonProps) => {
   console.log(children);
   return (
     <button
+      type={type}
       className={style.Button}
       style={{backgroundColor:bgColor}}
       onClick={() => {
         if(onButtonClick != undefined){
-          onButtonClick(children);
+          onButtonClick();
         }
-        else {
+        else{
           console.log("j'ai cliqué sur un bouton");
         }
       }}
