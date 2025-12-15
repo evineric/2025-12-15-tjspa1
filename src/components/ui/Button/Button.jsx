@@ -7,7 +7,12 @@ const Button = ({ title, onButtonClick, bgColor }) => {
       className={style.Button}
       style={{backgroundColor:bgColor}}
       onClick={() => {
-        onButtonClick(title);
+        if(onButtonClick != undefined){
+          onButtonClick(title);
+        }
+        else {
+          console.log("j'ai cliqué sur un bouton");
+        }
       }}
     >
       {title}
