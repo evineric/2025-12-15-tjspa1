@@ -5,13 +5,25 @@ function App() {
     <div>
       DEMAT BREIZH
       <br />
-      <Button title="benjamin"
-      onButtonClick={(param)=>{console.log("j'ai cliqué sur ",param)}}
-      bgColor="tomato"/>
-      <Button title="ok"
-      onButtonClick={(param)=>{console.log("j'ai cliqué sur ",param)}}/>
-      <Button title="cancel"
-      bgColor="#ccff00"/>
+      <Button
+        onButtonClick={(param) => {
+          console.log("j'ai cliqué sur ", param);
+        }}
+        bgColor="tomato"
+      >
+        benjamin
+      </Button>
+      <Button
+        onButtonClick={(param) => {
+          console.log("j'ai cliqué sur ", param);
+        }}
+      >
+        <div className="Warning"> Cancel </div>
+      </Button>
+      <Button bgColor="#ccff00">
+        <div>3ème </div>
+        <div>Bouton</div>
+      </Button>
     </div>
   );
 }

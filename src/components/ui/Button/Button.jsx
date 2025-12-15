@@ -1,21 +1,21 @@
 import React from "react";
 import style from './Button.module.css';
-const Button = ({ title, onButtonClick, bgColor }) => {
-  console.log(title);
+const Button = ({ children, onButtonClick, bgColor = "black" }) => {
+  console.log(children);
   return (
     <button
       className={style.Button}
       style={{backgroundColor:bgColor}}
       onClick={() => {
         if(onButtonClick != undefined){
-          onButtonClick(title);
+          onButtonClick(children);
         }
         else {
           console.log("j'ai cliqué sur un bouton");
         }
       }}
     >
-      {title}
+      {children}
     </button>
   );
 };
