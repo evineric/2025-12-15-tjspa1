@@ -1,16 +1,17 @@
 import React from "react";
 import style from './Button.module.css';
-const Button = ({ title, onButtonClick }) => {
+const Button = ({ title, onButtonClick, bgColor }) => {
   console.log(title);
   return (
-    <Button
+    <button
       className={style.Button}
+      style={{backgroundColor:bgColor}}
       onClick={() => {
         onButtonClick(title);
       }}
     >
       {title}
-    </Button>
+    </button>
   );
 };
 export default Button;
