@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import style from './Button.module.css';
 interface IButtonProps{
   children:React.ReactNode|Array<React.ReactNode>;
@@ -8,6 +8,12 @@ interface IButtonProps{
 }
 const Button = ({ children, onButtonClick, bgColor = "black", type = "button" }:IButtonProps) => {
   const [isCliked, setIsClicked] = useState(false);
+  useEffect(() => {
+    setTimeout(() => {
+      setIsClicked(false);
+    }, 232);
+    return () => {};
+  },[isCliked]);
   return (
     <button
       type={type}
