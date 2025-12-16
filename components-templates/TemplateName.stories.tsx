@@ -1,5 +1,5 @@
 /* eslint-disable */
-import TemplateName from './TemplateName';
+import TemplateName from '../src/components/TemplateName/TemplateName';
 
 export default {
   title: "TemplateName",

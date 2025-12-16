@@ -24,5 +24,5 @@
     "noFallthroughCasesInSwitch": true,
     "noUncheckedSideEffectImports": true
   },
-  "include": ["src"]
+  "include": ["src", "components-templates/TemplateName.lazy.tsx", "components-templates/TemplateName.stories.tsx", "components-templates/TemplateName.test.tsx"]
 }

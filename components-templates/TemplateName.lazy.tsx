@@ -1,6 +1,6 @@
 import React, { lazy, Suspense, type JSX } from "react";
 
-const LazyTemplateName = lazy(() => import("./TemplateName"));
+const LazyTemplateName = lazy(() => import("../src/components/TemplateName/TemplateName"));
 
 const TemplateName = (
   props: JSX.IntrinsicAttributes & { children?: React.ReactNode }
