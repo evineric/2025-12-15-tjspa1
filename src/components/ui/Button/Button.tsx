@@ -1,36 +1,43 @@
 import React, { useEffect, useState } from "react";
-import style from './Button.module.css';
-interface IButtonProps{
-  children:React.ReactNode|Array<React.ReactNode>;
-  onButtonClick?:()=>void;
-  bgColor?:string;
-  type?:'button'|'submit'|'reset';
+import style from "./Button.module.css";
+interface IButtonProps {
+  children: React.ReactNode | Array<React.ReactNode>;
+  onButtonClick?: () => void;
+  bgColor?: string;
+  type?: "button" | "submit" | "reset";
 }
-const Button = ({ children, onButtonClick, bgColor = "black", type = "button" }:IButtonProps) => {
-  const [isCliked, setIsClicked] = useState(false);
+const Button = ({
+  children,
+  onButtonClick,
+  bgColor = "black",
+  type = "button",
+}: IButtonProps) => {
+  const [isClicked, setIsClicked] = useState(false);
   useEffect(() => {
     setTimeout(() => {
-      setIsClicked(false);
-    }, 232);
+      if (isClicked) {
+        setIsClicked(false);
+        console.log("verif");
+      }
+    }, 421);
     return () => {};
-  },[isCliked]);
+  }, [isClicked]);
   return (
     <button
       type={type}
-      className={style.Button}
-      style={{backgroundColor:bgColor}}
+      className={`${style.Button}${isClicked ? ` ${style.clicked}` : ""}`}
+      style={{ backgroundColor: bgColor }}
       onClick={() => {
-        if(onButtonClick != undefined){
+        if (onButtonClick != undefined) {
           console.log(children);
           onButtonClick();
-          setIsClicked(true);          
-        }
-        else{
+          setIsClicked(true);
+        } else {
           console.log("j'ai cliqué sur un bouton");
         }
       }}
     >
-      {children} <br/> {isCliked.toString()}
+      {children}
     </button>
   );
 };

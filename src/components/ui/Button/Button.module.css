@@ -13,3 +13,7 @@
     box-shadow: 15px 15px 25px grey;
     border: 1px solid #afafaf;
 }
+.Button.clicked{
+    box-shadow: 5px 5px 25px grey;
+    transform: translate(5px);
+}
