@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import style from './Button.module.css';
 interface IButtonProps{
-  children:string|React.ReactElement|Array<string|React.ReactElement>;
+  children:React.ReactNode|Array<React.ReactNode>;
   onButtonClick?:()=>void;
   bgColor?:string;
   type?:'button'|'submit'|'reset';
