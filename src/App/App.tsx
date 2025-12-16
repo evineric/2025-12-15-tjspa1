@@ -5,6 +5,7 @@ import Footer from "../components/ui/Footer/Footer";
 import MemeSvgViewer from "../components/ui/MemeSvgViewer/MemeSvgViewer";
 import Navbar from "../components/ui/Navbar/Navbar";
 import MemeForm from "../components/functionnal/MemeForm/MemeForm";
+import { emptyMeme, MemeSVGViewer } from "orsys-tjs-meme";
 
 const App: React.FC<undefined> = () => {
   return (
@@ -13,7 +14,7 @@ const App: React.FC<undefined> = () => {
         <Header/>
         <Navbar/>
         <FlexV1Grow>
-          <MemeSvgViewer/>
+          <MemeSVGViewer meme={emptyMeme} image={undefined} basePath="" />
           <MemeForm/>
         </FlexV1Grow>
         <Footer/>
