@@ -10,7 +10,7 @@ interface ITemplateNameState {
 }
 
 const TemplateName: React.FC<ITemplateNameProps> = ({
-  children = "Template Component",
+  children = "TemplateName Component",
 }) => {
   const [state, setState] = useState<ITemplateNameState>({});
   useEffect(() => {

@@ -1,32 +1,24 @@
-import { useEffect, useState } from "react";
-import Button from "../components/ui/Button/Button";
+import FlexV1Grow from "../components/layout/FlexV1Grow/FlexV1Grow";
+import FlexH3Grow from "../components/layout/FlexH3Grow/FlexH3Grow";
+import Header from "../components/ui/Header/Header";
+import Footer from "../components/ui/Footer/Footer";
+import MemeSvgViewer from "../components/ui/MemeSvgViewer/MemeSvgViewer";
+import Navbar from "../components/ui/Navbar/Navbar";
+import MemeForm from "../components/functionnal/MemeForm/MemeForm";
 
 const App: React.FC<undefined> = () => {
-  const [counter, setCounter] = useState(0);
-  useEffect(() => {
-    console.log('counter effect',counter);
-  }, [counter]);
-
   return (
-    <div style={{ textAlign: "center" }}>
-      valeur de counter :{counter}
-      <hr />
-      <Button
-        onButtonClick={() => {
-          setCounter(counter - 1);
-        }}
-      >
-        -1
-      </Button>
-      <Button
-        bgColor="skyblue"
-        onButtonClick={() => {
-          setCounter(counter + 1);
-        }}
-      >
-        +1
-      </Button>
-    </div>
+    <div className="App">
+      <FlexH3Grow>
+        <Header/>
+        <Navbar/>
+        <FlexV1Grow>
+          <MemeSvgViewer/>
+          <MemeForm/>
+        </FlexV1Grow>
+        <Footer/>
+      </FlexH3Grow>
+    </div> 
   );
 };
 
