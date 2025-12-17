@@ -1,24 +1,20 @@
-import React from "react";
-import StandalonMemeForm from "./MemeForm";
-import type { IMemeFormStored } from "./MemeForm.interface";
-import { useDispatch, useSelector } from "react-redux";
-import { type StoreDispatch, type StoreState } from "../../../store/store";
-import { update } from "../../../store/current";
+import React from 'react'
+import type { IStoredMemeFormProps } from './MemeForm.interface'
+import StandaloneMemeForm from './MemeForm'
+import {useDispatch, useSelector} from 'react-redux'
+import { saveCurrent } from '../../../store/asyncCaller'
+import { update } from '../../../store/current'
+import type { AppDispatch, RootState } from '../../../store/store'
 
-const MemeForm: React.FC<IMemeFormStored> = (props) => {
-  const images = useSelector((s: StoreState) => s.ressources.images);
-  const current = useSelector((s: StoreState) => s.current.meme);
-  const dispatch = useDispatch<StoreDispatch>();
-  return (
-    <StandalonMemeForm
-      {...props}
-      images={images}
-      meme={current}
-      onMemeChange={(meme) => {
-        dispatch(update(meme));
-      }}
-    />
-  );
-};
+const MemeForm: React.FC<IStoredMemeFormProps> = (props) => {
+   const images=useSelector((state:RootState)=>state.ressources.images)
+   const current=useSelector((state:RootState)=>state.current.meme)
+   const dispatch=useDispatch<AppDispatch>();
+    return <StandaloneMemeForm {...props} images={images} meme={current} onMemeSave={(meme) => {
+        dispatch(saveCurrent(meme));
+    }} onMemeChange={(meme) => {
+        dispatch(update(meme))
+    }} />
+}
 
-export default MemeForm;
+export default MemeForm

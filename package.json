@@ -12,7 +12,8 @@
     "component": "npx generate-react-cli c",
     "component:u": "npx generate-react-cli c --type=ui",
     "component:l": "npx generate-react-cli c --type=layout",
-    "component:f": "npx generate-react-cli c --type=functionnal"
+    "component:f": "npx generate-react-cli c --type=functionnal",
+    "page": "npx generate-react-cli c --type=page"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^2.11.2",
@@ -21,7 +22,8 @@
     "react": "^19.2.0",
     "react-bootstrap": "^2.10.10",
     "react-dom": "^19.2.0",
-    "react-redux": "^9.2.0"
+    "react-redux": "^9.2.0",
+    "react-router": "^7.10.1"
   },
   "devDependencies": {
     "@eslint/js": "^9.39.1",

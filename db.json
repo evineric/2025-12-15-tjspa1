@@ -75,7 +75,7 @@
       "frameSizeY": 0
     },
     {
-      "titre": "",
+      "titre": "TEst",
       "text": "tyrhrfed",
       "x": 18,
       "y": 20,
@@ -98,7 +98,7 @@
       "fontSize": 30,
       "underline": false,
       "italic": false,
-      "imageId": 0,
+      "imageId": 5,
       "color": "#000000",
       "frameSizeX": 0,
       "frameSizeY": 0,
@@ -208,6 +208,21 @@
       "frameSizeX": 0,
       "frameSizeY": 0,
       "id": 14
+    },
+    {
+      "titre": "",
+      "text": "",
+      "x": 0,
+      "y": 17,
+      "fontWeight": "500",
+      "fontSize": 30,
+      "underline": false,
+      "italic": false,
+      "imageId": 0,
+      "color": "#000000",
+      "frameSizeX": 0,
+      "frameSizeY": 0,
+      "id": 15
     }
   ]
 }
