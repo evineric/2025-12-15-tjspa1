@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 import type { StoreState } from "../../../store/store";
 
 interface IMemeSvgViewerProps {
-  basePath?: "/" | "";
+  basePath: "/" | "";
 }
 const MemeSvgViewer: React.FC<IMemeSvgViewerProps> = ({ basePath }) => {
   const images = useSelector((s: StoreState) => s.ressources.images);
